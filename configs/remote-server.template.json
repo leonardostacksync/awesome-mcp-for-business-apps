@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "my-business-app": {
+      "type": "http",
+      "url": "REPLACE_WITH_THE_VENDOR_ENDPOINT"
+    }
+  }
+}

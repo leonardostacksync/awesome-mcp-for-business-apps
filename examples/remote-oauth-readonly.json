@@ -1,0 +1,12 @@
+{
+  "name": "Example remote server with OAuth and a read-only mode",
+  "oauth_signin": true,
+  "least_privilege": true,
+  "read_only_mode": true,
+  "write_approval": true,
+  "audit_log": true,
+  "revocable": true,
+  "maintained": true,
+  "rate_limits": true,
+  "sandbox_tested": false
+}

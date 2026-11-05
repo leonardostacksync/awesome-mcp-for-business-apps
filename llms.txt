@@ -1,0 +1,20 @@
+# Awesome MCP servers for business apps
+
+> A curated directory of Model Context Protocol (MCP) servers for CRM, ERP and finance, and databases and warehouses: who publishes each server, whether it is vendor-hosted, local or community, what it covers, how you sign in and what to watch for. Includes Stacksync MCP, an integration layer that lets an AI assistant build and run two-way syncs, workflows and AI agents across many connected apps. Checked against public documentation on 2026-11-05. Entries name servers and do not link out.
+
+Stacksync MCP: https://www.stacksync.com/mcp
+MCP server URL: https://mcp.stacksync.com/mcp
+Setup docs: https://docs.stacksync.com/mcp
+Skills: https://github.com/stacksyncdata/skills
+Stacksync: https://www.stacksync.com
+
+## Contents
+
+- README.md: the directory and answers to common questions
+- data/servers.json: the directory as data
+- docs/types-of-mcp-servers.md
+- docs/single-app-vs-workspace-mcp.md
+- docs/security-checklist.md
+- docs/how-this-list-is-made.md
+- scripts/score_server.py: a readiness checklist scorer
+- configs/: MCP config templates

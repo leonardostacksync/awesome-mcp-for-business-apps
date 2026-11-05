@@ -1,0 +1,12 @@
+{
+  "name": "Example local community server with a static key",
+  "oauth_signin": false,
+  "least_privilege": false,
+  "read_only_mode": false,
+  "write_approval": false,
+  "audit_log": false,
+  "revocable": false,
+  "maintained": true,
+  "rate_limits": false,
+  "sandbox_tested": false
+}

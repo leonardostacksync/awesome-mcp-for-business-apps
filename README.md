@@ -22,25 +22,15 @@ Types: **vendor-hosted** (remote endpoint run by the vendor), **vendor-local** (
 
 ### CRM
 
-- **Salesforce: Hosted MCP servers** (vendor-hosted)  
-  Covers: Expose capabilities of a Salesforce org to outside AI clients.  
-  Sign-in: An external client app for authentication.  
-  Note: Sources disagree on whether these are beta or generally available. Check Salesforce's current documentation.
-
-- **Salesforce: Salesforce DX MCP server** (vendor-local)  
-  Covers: Developer tooling: development, testing and deployment from an agentic IDE.  
-  Sign-in: Uses your local CLI session.  
-  Note: For developers, not for business users working with records. Some sources describe it as beta.
+- **HubSpot: Developer MCP server** (vendor-local)  
+  Covers: Helps coding agents work with the HubSpot developer platform, such as scaffolding and deploying apps and CMS assets.  
+  Sign-in: Installed through the HubSpot CLI.  
+  Note: Not a CRM data server. It is a developer tool.
 
 - **HubSpot: Remote MCP server** (vendor-hosted)  
   Covers: Read and write access to CRM data such as contacts and deals.  
   Sign-in: OAuth.  
   Note: Aimed at MCP-compatible AI tools and agents.
-
-- **HubSpot: Developer MCP server** (vendor-local)  
-  Covers: Helps coding agents work with the HubSpot developer platform, such as scaffolding and deploying apps and CMS assets.  
-  Sign-in: Installed through the HubSpot CLI.  
-  Note: Not a CRM data server. It is a developer tool.
 
 - **Microsoft: Dataverse MCP server (Dynamics 365 CRM data)** (vendor-hosted)  
   Covers: MCP access to Dataverse, the data platform under Dynamics 365 CRM apps.  
@@ -52,32 +42,42 @@ Types: **vendor-hosted** (remote endpoint run by the vendor), **vendor-local** (
   Sign-in: Microsoft identity.  
   Note: Reported as generally available in 2026, while a Microsoft connector page still labeled it preview. Check current status.
 
+- **Salesforce: Hosted MCP servers** (vendor-hosted)  
+  Covers: Expose capabilities of a Salesforce org to outside AI clients.  
+  Sign-in: An external client app for authentication.  
+  Note: Sources disagree on whether these are beta or generally available. Check Salesforce's current documentation.
+
+- **Salesforce: Salesforce DX MCP server** (vendor-local)  
+  Covers: Developer tooling: development, testing and deployment from an agentic IDE.  
+  Sign-in: Uses your local CLI session.  
+  Note: For developers, not for business users working with records. Some sources describe it as beta.
+
 ### ERP and finance
-
-- **Oracle NetSuite: AI Connector Service and MCP Standard Tools SuiteApp** (vendor-hosted)  
-  Covers: An MCP layer inside NetSuite. The MCP Standard Tools SuiteApp supplies default tools such as record access, saved searches, reports and metadata lookups, and you can build your own tools.  
-  Sign-in: OAuth 2.0 with a dedicated role.  
-  Note: Guides report that the Administrator role cannot be used. The AI client may need its own paid plan. Verify setup in Oracle's current help.
-
-- **Microsoft: Dynamics 365 ERP MCP server (Finance and Operations)** (vendor-hosted)  
-  Covers: MCP access to Dynamics 365 ERP data.  
-  Sign-in: Microsoft identity.  
-  Note: Was a preview, enabled through Feature management, as of late 2025. Check current status.
-
-- **SAP: SAP BTP administration MCP server** (vendor-hosted)  
-  Covers: Administering SAP BTP accounts.  
-  Sign-in: Requires access to a BTP global account.  
-  Note: Listed as official by a directory. Access to business data in S/4HANA is mostly community-built on OData and BAPI. Verify in SAP's help portal.
 
 - **Intuit: QuickBooks Online MCP server** (vendor-open-source)  
   Covers: The QuickBooks Online API: create, read, update, delete and search across entities, and financial reports.  
   Sign-in: OAuth. Runs locally over stdio.  
   Note: A hosted option exists in some AI clients. Availability varies by region and client.
 
+- **Microsoft: Dynamics 365 ERP MCP server (Finance and Operations)** (vendor-hosted)  
+  Covers: MCP access to Dynamics 365 ERP data.  
+  Sign-in: Microsoft identity.  
+  Note: Was a preview, enabled through Feature management, as of late 2025. Check current status.
+
 - **Odoo: Community servers and modules** (community)  
   Covers: Access to Odoo data from AI clients.  
   Sign-in: Depends on the project.  
   Note: No vendor-official server was found. Some options are modules installed on your Odoo server, and some are paid third-party modules.
+
+- **Oracle NetSuite: AI Connector Service and MCP Standard Tools SuiteApp** (vendor-hosted)  
+  Covers: An MCP layer inside NetSuite. The MCP Standard Tools SuiteApp supplies default tools such as record access, saved searches, reports and metadata lookups, and you can build your own tools.  
+  Sign-in: OAuth 2.0 with a dedicated role.  
+  Note: Guides report that the Administrator role cannot be used. The AI client may need its own paid plan. Verify setup in Oracle's current help.
+
+- **SAP: SAP BTP administration MCP server** (vendor-hosted)  
+  Covers: Administering SAP BTP accounts.  
+  Sign-in: Requires access to a BTP global account.  
+  Note: Listed as official by a directory. Access to business data in S/4HANA is mostly community-built on OData and BAPI. Verify in SAP's help portal.
 
 - **Zoho Books: Community servers** (community)  
   Covers: Invoices, contacts, expenses, inventory and sales orders in several community projects.  
@@ -86,25 +86,10 @@ Types: **vendor-hosted** (remote endpoint run by the vendor), **vendor-local** (
 
 ### Databases and warehouses
 
-- **Supabase: Supabase MCP server** (vendor-hosted)  
-  Covers: The Supabase platform: database, auth and edge functions.  
-  Sign-in: OAuth over Streamable HTTP.  
-  Note: Documents a read-only mode.
-
-- **Neon: Neon MCP server** (vendor-hosted)  
-  Covers: Managing Neon Postgres projects and branches, running SQL and migrations.  
-  Sign-in: Hosted, with OAuth.  
-  Note: Write mode can create projects and branches, which can add cost.
-
-- **MongoDB: MongoDB MCP Server and Atlas managed MCP** (vendor-open-source)  
-  Covers: Atlas, Atlas Local, Community and Enterprise deployments. A managed, hosted option runs in Atlas.  
-  Sign-in: Database credentials or Atlas API access.  
-  Note: A read-only configuration is available.
-
-- **Snowflake: Snowflake managed MCP server** (vendor-hosted)  
-  Covers: Cortex Agents, Cortex Analyst, Cortex Search and SQL execution.  
-  Sign-in: Governed by Snowflake role-based access control.  
-  Note: Access follows the roles you grant.
+- **ClickHouse: ClickHouse MCP server** (vendor-open-source)  
+  Covers: Querying ClickHouse. ClickHouse Cloud also offers a managed remote server with more tools, including management operations.  
+  Sign-in: OAuth on the managed remote server.  
+  Note: A different community server also exists. Check which one you are installing.
 
 - **Databricks: Managed MCP servers** (vendor-hosted)  
   Covers: Unity Catalog functions, Genie, vector search and, on some clouds, SQL.  
@@ -116,37 +101,57 @@ Types: **vendor-hosted** (remote endpoint run by the vendor), **vendor-local** (
   Sign-in: Database or Google Cloud credentials.  
   Note: Sources differ on how it is classified. Treat it as Google's open-source project.
 
-- **ClickHouse: ClickHouse MCP server** (vendor-open-source)  
-  Covers: Querying ClickHouse. ClickHouse Cloud also offers a managed remote server with more tools, including management operations.  
-  Sign-in: OAuth on the managed remote server.  
-  Note: A different community server also exists. Check which one you are installing.
-
-- **Redis: Redis MCP server** (vendor-open-source)  
-  Covers: A natural-language interface to manage and search data in Redis.  
-  Sign-in: Redis connection settings.  
-  Note: A separate Redis Cloud API server handles administration only and does not read or write data.
+- **MongoDB: MongoDB MCP Server and Atlas managed MCP** (vendor-open-source)  
+  Covers: Atlas, Atlas Local, Community and Enterprise deployments. A managed, hosted option runs in Atlas.  
+  Sign-in: Database credentials or Atlas API access.  
+  Note: A read-only configuration is available.
 
 - **MySQL: Community servers** (community)  
   Covers: Inspecting and querying MySQL databases.  
   Sign-in: A database user.  
   Note: No Oracle-published server was found. Use a read-only database user.
 
+- **Neon: Neon MCP server** (vendor-hosted)  
+  Covers: Managing Neon Postgres projects and branches, running SQL and migrations.  
+  Sign-in: Hosted, with OAuth.  
+  Note: Write mode can create projects and branches, which can add cost.
+
 - **PostgreSQL: Community and provider-hosted servers** (community)  
   Covers: Querying Postgres. Several community servers exist, and hosted providers such as Supabase and Neon ship their own.  
   Sign-in: A database user, or the provider's OAuth.  
   Note: Check that the project you pick is still maintained.
 
-### Adjacent business apps
+- **Redis: Redis MCP server** (vendor-open-source)  
+  Covers: A natural-language interface to manage and search data in Redis.  
+  Sign-in: Redis connection settings.  
+  Note: A separate Redis Cloud API server handles administration only and does not read or write data.
 
-- **Stripe: Stripe MCP server** (vendor-hosted)  
-  Covers: Payments data and actions in Stripe.  
-  Sign-in: OAuth or an agent API key.  
-  Note: Requires human confirmation before some writes such as refunds. Key requirements were changing, so check the current rules.
+- **Snowflake: Snowflake managed MCP server** (vendor-hosted)  
+  Covers: Cortex Agents, Cortex Analyst, Cortex Search and SQL execution.  
+  Sign-in: Governed by Snowflake role-based access control.  
+  Note: Access follows the roles you grant.
+
+- **Supabase: Supabase MCP server** (vendor-hosted)  
+  Covers: The Supabase platform: database, auth and edge functions.  
+  Sign-in: OAuth over Streamable HTTP.  
+  Note: Documents a read-only mode.
+
+### Adjacent business apps
 
 - **Atlassian: Rovo MCP server** (vendor-hosted)  
   Covers: Jira, Confluence, Jira Service Management and other Atlassian cloud products.  
   Sign-in: OAuth 2.1.  
   Note: Cloud only. It does not help with self-hosted Jira.
+
+- **JobsPipe: JobsPipe MCP** (vendor-hosted)  
+  Covers: Search aggregated job listings from many public sources for AI agents.  
+  Sign-in: API key with account credits.  
+  Note: Vendor-hosted remote MCP. Free starter credits are mentioned in public docs; confirm current limits and setup there.
+
+- **Stripe: Stripe MCP server** (vendor-hosted)  
+  Covers: Payments data and actions in Stripe.  
+  Sign-in: OAuth or an agent API key.  
+  Note: Requires human confirmation before some writes such as refunds. Key requirements were changing, so check the current rules.
 
 ### Integration layer
 
